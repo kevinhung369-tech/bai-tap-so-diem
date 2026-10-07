@@ -23,4 +23,10 @@ student_list        GET                     /students
 - `curl -i -X DELETE $S/WEB` -> Trả về `HTTP/1.1 204 NO CONTENT`.
 - `curl -i -X POST $S/WEB` -> Trả về `HTTP/1.1 405 METHOD NOT ALLOWED` (Lỗi JSON).
 - `curl -i -X POST $B/students` -> Trả về `HTTP/1.1 405 METHOD NOT ALLOWED` (Trang lỗi HTML).
-- 
+- ## 3. Trả lời câu hỏi
+* **Vì sao Câu 4 dùng 301 còn Câu 8 trả 201 kèm Location?**
+  - Câu 4 dùng 301 để báo trình duyệt chuyển hướng vĩnh viễn tới trang chi tiết sinh viên.
+  - Câu 8 dùng 201 để báo với client rằng một tài nguyên mới (điểm học phần) đã được tạo thành công qua API, kèm Location chỉ định đường dẫn của nó.
+
+* **Thêm điểm cho 23T1020005 rồi khởi động lại server, điểm đó còn không? Vì sao?**
+  - Điểm đó không còn. Vì dữ liệu STUDENTS hiện tại được lưu cứng trong bộ nhớ RAM, khi tắt server bộ nhớ sẽ bị xoá nên dữ liệu quay lại mặc định.
