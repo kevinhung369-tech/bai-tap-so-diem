@@ -1,4 +1,6 @@
 ## 1. Kết quả lệnh `flask --app sodiem routes`
+
+```text
 Endpoint            Methods                 Rule
 ------------------  ----------------------  -------------------------------------------
 api_student_detail  GET                     /api/students/<mssv>
@@ -11,6 +13,7 @@ short_link          GET                     /sv/<mssv>
 static              GET                     /static/<path:filename>
 student_detail      GET                     /students/<mssv>
 student_list        GET                     /students
+```
 ## 2. Kết quả kiểm thử curl
 - `curl -i $B/sv/23T1020001` -> Trả về `HTTP/1.1 301 MOVED PERMANENTLY` kèm header `Location: /students/23T1020001`.
 - `curl -i $B/students/23T1020001/export` -> Trả về `HTTP/1.1 200 OK` kèm file CSV.
